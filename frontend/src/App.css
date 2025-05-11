@@ -1,0 +1,258 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 20px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-top: 0;
+  color: #3498db;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.upload-section form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.upload-section input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e74c3c;
+  background-color: #fdd;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #e74c3c;
+}
+
+.content-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for preview and results */
+  gap: 20px;
+}
+
+.image-preview-section .preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.extraction-results-section p strong {
+  color: #2c3e50;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for features */
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-item label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.feature-item input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.feature-item input.not-found {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+
+.history-section .history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.history-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+  background-color: #f9f9f9;
+}
+
+.history-item:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-color: #3498db;
+}
+
+.history-item img {
+  max-width: 100%;
+  max-height: 100px; /* Limit history image height */
+  object-fit: contain; /* Changed from cover to contain to see full image */
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.history-item p {
+  margin: 4px 0;
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.history-item p strong {
+  color: #2c3e50;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-radius: 0 0 8px 8px;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-area {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+  .upload-section form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .upload-section input[type="file"],
+  .upload-section button {
+    width: 100%;
+  }
+}
+/* ... (existing styles) ... */
+
+.success-message {
+  color: #2ecc71;
+  background-color: #e6ffee;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #2ecc71;
+}
+
+.upload-section .clear-button {
+  background-color: #e67e22; /* Orange for clear/reset */
+  margin-left: 10px; /* Add some space from the submit button */
+}
+.upload-section .clear-button:hover:not(:disabled) {
+  background-color: #d35400;
+}
+
+
+.image-preview-section .filename-display {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+  word-break: break-all;
+}
+
+.extraction-results-section h2 { /* Show doc ID in heading */
+  font-size: 1.4em;
+}
+
+
+.save-changes-button {
+  margin-top: 20px;
+  background-color: #27ae60; /* Green for save */
+}
+
+.save-changes-button:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.history-item small {
+  font-size: 0.8em;
+  color: #7f8c8d;
+  display: block;
+  margin-top: 4px;
+}
+
+.history-item.active {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  background-color: #eaf4fb;
+}
