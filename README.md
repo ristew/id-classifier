@@ -8,6 +8,7 @@ to run the API:
     ./venv/bin/pip install -r requirements.txt
     ./venv/bin/uvicorn server:app --reload
 
+(On macOS I had to use `/opt/homebrew/bin/python3 -m venv venv` due to the default python3 being on 3.9)
 
 and to run the frontend:
     
